@@ -18,31 +18,10 @@ public class ProductEAO {
 	@PersistenceContext(unitName ="storePu")
     private EntityManager em;
 	
-	/**
-	 * Adds a stand to the database
-	 * @param stand
-	 */
-	public void leggTilStand(Product p) {
-		em.persist(p);
-	}
-	/**
-	 * retrieves a stand from the batabase
-	 * @param stand
-	 * @return
-	 */
-	public Stand hentStandInformasjon(String standNavn) {
-		Stand stand = em.find(Stand.class, standNavn);
-		return stand;
+
+	
+	public List<Product> gettAllProducts(){
+		return em.createQuery("SELECT s FROM Product s ORDER BY s.pno").getResultList();
 	}
 	
-	public List<Stand> hentAlleStands(){
-		return em.createQuery("SELECT s FROM Stand s ORDER BY s.navn").getResultList();
-	}
-	public boolean finnes(String standnavn) {
-		if(standnavn == null) {
-			return false;
-		}
-		Stand stand = em.find(Stand.class, standnavn);
-		return stand != null;
-	}
 }

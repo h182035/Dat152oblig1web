@@ -1,6 +1,19 @@
 package objekt;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(schema = "store", name = "product")
 public class Product {
+	
+	@Id
+	@Column(name = "pno")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int pno;
 	private String pName;
 	private float priceInEuro;
@@ -12,6 +25,11 @@ public class Product {
 		this.priceInEuro = priceInEuro;
 		this.imageFile = imageFile;
 	}
+	
+	public Product() {
+		
+	}
+	
 	public int getPno() {
 		return pno;
 	}
