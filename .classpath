@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="language"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
@@ -11,6 +12,11 @@
 	<classpathentry kind="lib" path="C:/Program1/apache-tomee-webprofile-7.1.0/lib/servlet-api.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="https://docs.oracle.com/javaee/6/api/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program1/apache-tomee-webprofile-7.1.0/lib/javaee-api-7.0-1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://tomcat.apache.org/tomcat-8.5-doc/api/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>

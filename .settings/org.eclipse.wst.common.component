@@ -2,6 +2,7 @@
     <wb-module deploy-name="Dat152oblig1WEB">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/language"/>
         <property name="context-root" value="Dat152oblig1WEB"/>
         <property name="java-output-path" value="/Dat152oblig1WEB/build/classes"/>
     </wb-module>
