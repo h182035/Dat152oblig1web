@@ -13,7 +13,7 @@
 <table>
 <c:forEach items="${products}" var="m">
 						<tr>
-							<td>${m.pName}</td> <td>${m.priceInEuro}</td> <td><img src="${m.imageFile}"/></td>
+							<td>${m.product.pName}</td> <td>${m.desc}</td> <td><img src="${m.product.imageFile}"/></td>
 						</tr>
 					</c:forEach>
 </table>
