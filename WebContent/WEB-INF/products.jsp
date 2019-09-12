@@ -10,12 +10,12 @@
 <body>
 <p>${test}</p>
 
-
+<table>
 <c:forEach items="${products}" var="m">
 						<tr>
-							<td>${m.pName}</td>
+							<td>${m.pName}</td> <td>${m.priceInEuro}</td> <td><img src="${m.imageFile}"/></td>
 						</tr>
 					</c:forEach>
-
+</table>
 </body>
 </html>
