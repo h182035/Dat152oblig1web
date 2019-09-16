@@ -21,5 +21,6 @@
 
 <button type="submit" name="toCart" value="1">${goToCart}</button>
 </form>
+<p> &#169; MMVIII-MMXIX Høgskolen på Vestlandet</p>
 </body>
 </html>

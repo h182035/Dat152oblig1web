@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    <%@ taglib prefix="dat152" tagdir="/WEB-INF/tags"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,7 @@
 
 <button type="submit" name="sprak" value="fransk">fransk</button>
 </form>
-
 </fmt:bundle>
+<p> &#169; MMVIII-MMXIX Høgskolen på Vestlandet</p>
 </body>
 </html>

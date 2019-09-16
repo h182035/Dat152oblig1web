@@ -16,7 +16,7 @@
 <table border="1" >
 <c:forEach items="${products}" var="m">
 						<tr>
-							<td>${m.product.pName}</td> <dat152:uppercase><td>${m.desc}</td></dat152:uppercase>
+							<td>${m.product.pName}</td> <dat152:maxchars><td>${m.desc}</td></dat152:maxchars>
 							 <td><img src="bilder/${m.product.imageFile}" height="150"/></td>
 							<td><button type="submit" name="add" value="${m.product.pno}">${addToCart}</button></td>
 						</tr>
@@ -25,5 +25,6 @@
 
 <button type="submit" name="toCart" value="1">${goToCart}</button>
 </form>
+<p> &#169; MMVIII-MMXIX Høgskolen på Vestlandet</p>
 </body>
 </html>
