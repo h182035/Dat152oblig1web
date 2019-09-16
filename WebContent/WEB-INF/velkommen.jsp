@@ -22,6 +22,6 @@
 <button type="submit" name="sprak" value="fransk">fransk</button>
 </form>
 </fmt:bundle>
-<p> &#169; MMVIII-MMXIX Høgskolen på Vestlandet</p>
+<dat152:roman/>
 </body>
 </html>

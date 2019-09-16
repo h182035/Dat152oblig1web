@@ -1,6 +1,12 @@
-<p>
-	<a href="SetLanguage?locale=no_NO">Norsk</a> <a
-		href="SetLanguage?locale=en_US">English (US)</a> <a
-		href="SetLanguage?locale=en_UK">English (UK)</a> <a
-		href="SetLanguage?locale=fr_FR">French (France)</a>
-</p>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+    <title>Choose language</title>
+</head>
+<body>
+<a href="${pageContext.request.contextPath}/language?lan=en">English</a>
+<a href="${pageContext.request.contextPath}/language?lan=no">Norsk</a>
+<a href="${pageContext.request.contextPath}/language?lan=fr">Français</a>
+</body>
+</html>

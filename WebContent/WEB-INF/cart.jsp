@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="dat152" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,6 @@
 
 <button type="submit" name="toCart" value="1">${goToCart}</button>
 </form>
-<p> &#169; MMVIII-MMXIX Høgskolen på Vestlandet</p>
+<dat152:roman/>
 </body>
 </html>
