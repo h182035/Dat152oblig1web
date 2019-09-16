@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import eao.DescriptionEAO;
 import eao.ProductEAO;
+import objekt.Cart;
 import objekt.Description;
 import objekt.Product;
 import objekt.ProduktDesc;
@@ -33,6 +34,8 @@ public class Products extends HttpServlet {
     private ProductEAO productEAO;
     @EJB
     private DescriptionEAO descriptionEAO;
+    
+    List<Product> products;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -47,19 +50,31 @@ public class Products extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		HttpSession session = request.getSession(false);
 		locale = (Locale)session.getAttribute("locale");
 		bundle = ResourceBundle.getBundle("siteText", locale);
-		List<Product> products = productEAO.gettAllProducts();
+		products = productEAO.gettAllProducts();
 		List<Description> descriptions = descriptionEAO.getAllDescriptions();
 		List<ProduktDesc> productsDesc = mergeDescProduct(products, descriptions, locale);
 		session.setAttribute("products", productsDesc);
 		System.out.println(locale.getLanguage());
-		session.setAttribute("test", bundle.getString("test"));
+
+		//setLanguage(session);
 		request.getRequestDispatcher("WEB-INF/products.jsp").forward(request, response);
 	}
 
 	
+
+
+
+	private void setLanguage(HttpSession session) {
+		session.setAttribute("test", bundle.getString("test"));
+		session.setAttribute("addToCart", bundle.getString("addToCart"));
+		session.setAttribute("goToCart", bundle.getString("goToCart"));
+		
+	}
 
 
 
@@ -96,8 +111,40 @@ public class Products extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		if(request.getParameter("toCart") != null) {
+			response.sendRedirect("cart");
+			return;
+		}
+		if(request.getSession().getAttribute("cart") == null) {
+			Cart cart = new Cart();
+			request.getSession().setAttribute("cart", cart);;
+		}
+		addToCart(request.getParameter("add"), request);
+		response.sendRedirect("products");
+	}
+
+
+
+	private void addToCart(String parameter, HttpServletRequest request) {
+		Product p = getProduct(parameter);
+		Cart cart = (Cart) request.getSession().getAttribute("cart");
+		cart.add(p);
+		System.out.println(cart.size());
+		
+	}
+
+
+
+	private Product getProduct(String parameter) {
+		boolean funnet = false;
+		Product p = null;
+		for(int i = 0; i < products.size() && !funnet; i++) {
+			if(products.get(i).getPno() == Integer.parseInt(parameter)) {
+				p = products.get(i);
+				funnet = true;
+			}
+		}
+		return p;
 	}
 
 }

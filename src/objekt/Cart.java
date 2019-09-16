@@ -50,4 +50,13 @@ public class Cart {
 		}
 		
 	}
+
+	public ArrayList<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(ArrayList<Product> products) {
+		this.products = products;
+	}
+	
 }

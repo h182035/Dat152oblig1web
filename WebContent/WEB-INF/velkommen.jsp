@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,10 @@
 <title>Velg Språk</title>
 </head>
 <body>
-<h1>Welcome</h1>
-<p>Please choose a language </p>
+<p><jsp:include page="chooseLanguage.jsp" /></p>
+<fmt:bundle basename="siteText">
+<h1><fmt:message key="velkommen"/></h1>
+<p><fmt:message key="velgSprak"/></p>
 <form method="post">
 <button type="submit" name="sprak" value="norsk">norsk</button>
 
@@ -16,5 +19,7 @@
 
 <button type="submit" name="sprak" value="fransk">fransk</button>
 </form>
+
+</fmt:bundle>
 </body>
 </html>

@@ -12,10 +12,9 @@
 <p>${test}</p>
 <form method="post">
 <table border="1" >
-<c:forEach items="${products}" var="m">
+<c:forEach items="${cart.products}" var="m">
 						<tr>
-							<td>${m.product.pName}</td> <td>${m.desc}</td> <td><img src="bilder/${m.product.imageFile}" height="150"/></td>
-							<td><button type="submit" name="add" value="${m.product.pno}">${addToCart}</button></td>
+							<td>${m.pName}</td> <td>${m.imageFile}</td>
 						</tr>
 					</c:forEach>
 </table>
